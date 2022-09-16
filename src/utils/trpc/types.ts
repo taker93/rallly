@@ -6,7 +6,7 @@ export type GetPollApiResponse = {
   authorName: string;
   location: string | null;
   description: string | null;
-  maxVotes: number | null;
+  maxVotes?: number;
   options: Option[];
   user: User;
   timeZone: string | null;

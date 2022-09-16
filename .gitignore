@@ -30,6 +30,7 @@ yarn-error.log*
 .env.development.local
 .env.test.local
 .env.production.local
+.env.prod
 
 # vercel
 .vercel
@@ -43,3 +44,5 @@ yarn-error.log*
 
 # ts
 tsconfig.tsbuildinfo
+
+docker-compose.prod.yml

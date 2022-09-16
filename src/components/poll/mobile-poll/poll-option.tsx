@@ -18,6 +18,7 @@ export interface PollOptionProps {
   ifNeedBeScore: number;
   editable?: boolean;
   vote?: VoteType;
+  maxVotes?: number;
   onChange: (vote: VoteType) => void;
   participants: Participant[];
   selectedParticipantId?: string;
@@ -181,6 +182,7 @@ const PollOption: React.VoidFunctionComponent<PollOptionProps> = ({
   participants,
   editable = false,
   yesScore,
+  maxVotes,
   optionId,
 }) => {
   const showVotes = !!(selectedParticipantId || editable);
@@ -232,6 +234,7 @@ const PollOption: React.VoidFunctionComponent<PollOptionProps> = ({
                 value={vote}
                 onChange={onChange}
                 className="w-9"
+                capReached={maxVotes != null && yesScore >= maxVotes}
               />
             </div>
           ) : (

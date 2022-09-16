@@ -26,6 +26,7 @@ const PollOptions: React.VoidFunctionComponent<PollOptions> = ({
     getParticipantById,
     getScore,
     getVote,
+    poll,
     options: allOptions,
   } = usePoll();
   const selectedParticipant = selectedParticipantId
@@ -67,6 +68,7 @@ const PollOptions: React.VoidFunctionComponent<PollOptions> = ({
                       onChange={handleChange}
                       optionId={option.optionId}
                       yesScore={score.yes}
+                      maxVotes={poll.maxVotes}
                       ifNeedBeScore={score.ifNeedBe}
                       participants={participants}
                       vote={vote}
@@ -83,6 +85,7 @@ const PollOptions: React.VoidFunctionComponent<PollOptions> = ({
                       onChange={handleChange}
                       optionId={option.optionId}
                       yesScore={score.yes}
+                      maxVotes={poll.maxVotes}
                       ifNeedBeScore={score.ifNeedBe}
                       participants={participants}
                       vote={vote}
