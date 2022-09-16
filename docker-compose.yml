@@ -3,6 +3,8 @@ services:
   rallly_db:
     image: postgres:14.2
     restart: always
+    ports:
+      - 5432:5432
     volumes:
       - db-data:/var/lib/postgresql/data
     environment:
@@ -11,8 +13,6 @@ services:
   rallly:
     build:
       context: .
-      args:
-        - DATABASE_URL=postgres://postgres:postgres@rallly_db:5432/db?pgbouncer=true
     restart: always
     depends_on:
       - rallly_db

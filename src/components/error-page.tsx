@@ -7,8 +7,6 @@ import { Button } from "@/components/button";
 import Chat from "@/components/icons/chat.svg";
 import EmojiSad from "@/components/icons/emoji-sad.svg";
 
-import { showCrispChat } from "./crisp-chat";
-
 export interface ComponentProps {
   icon?: React.ComponentType<{ className?: string }>;
   title: string;
@@ -38,9 +36,6 @@ const ErrorPage: React.VoidFunctionComponent<ComponentProps> = ({
             <Link href="/" passHref={true}>
               <a className="btn-default">{t("goToHome")}</a>
             </Link>
-            <Button icon={<Chat />} onClick={showCrispChat}>
-              {t("startChat")}
-            </Button>
           </div>
         </div>
       </div>

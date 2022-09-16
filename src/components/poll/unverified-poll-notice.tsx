@@ -36,9 +36,11 @@ export const UnverifiedPollNotice = () => {
           disabled={requestVerificationEmail.isSuccess}
           loading={requestVerificationEmail.isLoading}
         >
-          {requestVerificationEmail.isSuccess
-            ? "Vertification email sent"
-            : "Resend verification email"}
+          {
+            requestVerificationEmail.isSuccess
+              ? t("verificationEmailSent")
+              : t("resendVerificationEmail")
+          }
         </Button>
       </div>
     </div>

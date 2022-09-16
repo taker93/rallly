@@ -1,0 +1,91 @@
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-Medium.ttf");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-SemiBold.ttf");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-Bold.ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/** NOTO SANS MONO **/
+@font-face {
+  font-family: "Noto Sans Mono";
+  src: url("/fonts/NotoSansMono-Thin.ttf");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Noto Sans Mono";
+  src: url("/fonts/NotoSansMono-ExtraLight.ttf");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Noto Sans Mono";
+  src: url("/fonts/NotoSansMono-Light.ttf");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Noto Sans Mono";
+  src: url("/fonts/NotoSansMono-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Noto Sans Mono";
+  src: url("/fonts/NotoSansMono-Medium.ttf");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Noto Sans Mono";
+  src: url("/fonts/NotoSansMono-SemiBold.ttf");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Noto Sans Mono";
+  src: url("/fonts/NotoSansMono-Bold.ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Noto Sans Mono";
+  src: url("/fonts/NotoSansMono-ExtraBold.ttf");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Noto Sans Mono";
+  src: url("/fonts/NotoSansMono-Black.ttf");
+  font-weight: 900;
+  font-style: normal;
+}

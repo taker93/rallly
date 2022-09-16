@@ -3,17 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 const supportedLocales = [
   "en",
-  "es",
   "de",
-  "fr",
-  "it",
-  "ko",
-  "nl",
-  "sv",
-  "hu",
-  "zh",
-  "pt",
-  "pt-BR",
 ];
 
 export function middleware({ headers, cookies, nextUrl }: NextRequest) {

@@ -39,9 +39,9 @@ type PollContextValue = {
   ) => (Participant & { votes: Vote[] }) | undefined;
   getVote: (participantId: string, optionId: string) => VoteType | undefined;
 } & (
-  | { pollType: "date"; options: ParsedDateOption[] }
-  | { pollType: "timeSlot"; options: ParsedTimeSlotOption[] }
-);
+    | { pollType: "date"; options: ParsedDateOption[] }
+    | { pollType: "timeSlot"; options: ParsedTimeSlotOption[] }
+  );
 
 export const PollContext = React.createContext<PollContextValue | null>(null);
 

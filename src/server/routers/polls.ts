@@ -21,6 +21,7 @@ const defaultSelectFields: {
   authorName: true;
   location: true;
   description: true;
+  maxVotes: true;
   createdAt: true;
   participantUrlId: true;
   adminUrlId: true;
@@ -42,6 +43,7 @@ const defaultSelectFields: {
   authorName: true,
   location: true,
   description: true,
+  maxVotes: true,
   createdAt: true,
   participantUrlId: true,
   adminUrlId: true,
@@ -86,6 +88,7 @@ export const polls = createRouter()
       timeZone: z.string().optional(),
       location: z.string().optional(),
       description: z.string().optional(),
+      maxVotes: z.number().optional(),
       user: z.object({
         name: z.string(),
         email: z.string(),
@@ -117,6 +120,7 @@ export const polls = createRouter()
           timeZone: input.timeZone,
           location: input.location,
           description: input.description,
+          maxVotes: input.maxVotes,
           authorName: input.user.name,
           demo: input.demo,
           verified: verified,
@@ -224,6 +228,7 @@ export const polls = createRouter()
       title: z.string().optional(),
       timeZone: z.string().optional(),
       location: z.string().optional(),
+      maxVotes: z.number().optional(),
       description: z.string().optional(),
       optionsToDelete: z.string().array().optional(),
       optionsToAdd: z.string().array().optional(),
@@ -262,6 +267,7 @@ export const polls = createRouter()
           title: input.title,
           location: input.location,
           description: input.description,
+          maxVotes: input.maxVotes == undefined ? null : input.maxVotes,
           timeZone: input.timeZone,
           notifications: input.notifications,
           closed: input.closed,

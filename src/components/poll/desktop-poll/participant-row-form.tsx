@@ -39,7 +39,7 @@ const ParticipantRowForm: React.ForwardRefRenderFunction<
     setScrollPosition,
   } = usePollContext();
 
-  const { options, optionIds } = usePoll();
+  const { options, optionIds, poll, getScore } = usePoll();
   const {
     handleSubmit,
     control,
@@ -153,6 +153,7 @@ const ParticipantRowForm: React.ForwardRefRenderFunction<
                       ref={(el) => {
                         checkboxRefs.current[index] = el;
                       }}
+                      capReached={poll.maxVotes != null && getScore(optionId).yes >= poll.maxVotes}
                     />
                   </div>
                 );

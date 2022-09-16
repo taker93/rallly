@@ -7,7 +7,7 @@ import * as React from "react";
 import { createBreakpoint } from "react-use";
 
 import DotsVertical from "@/components/icons/dots-vertical.svg";
-import Github from "@/components/icons/github.svg";
+import Home from "@/components/icons/home.svg";
 import Logo from "~/public/logo.svg";
 
 import Footer from "./page-layout/footer";
@@ -39,24 +39,9 @@ const Menu: React.VoidFunctionComponent<{ className: string }> = ({
           {t("home")}
         </a>
       </Link>
-      <Link href="https://blog.rallly.co">
-        <a
-          className={clsx(
-            "text-gray-400 transition-colors hover:text-primary-500 hover:no-underline hover:underline-offset-2",
-          )}
-        >
-          {t("blog")}
-        </a>
-      </Link>
-      <a
-        href="https://support.rallly.co"
-        className="text-gray-400 transition-colors hover:text-primary-500 hover:no-underline hover:underline-offset-2"
-      >
-        {t("support")}
-      </a>
-      <Link href="https://github.com/lukevella/rallly">
-        <a className="text-gray-400 transition-colors hover:text-primary-500 hover:no-underline hover:underline-offset-2">
-          <Github className="w-6" />
+      <Link href="https://nur-kurz.de/">
+        <a className="flex items-center text-gray-400 transition-colors hover:text-primary-500 hover:no-underline hover:underline-offset-2">
+          <Home className="w-6 mr-2" /> {t("homepage")}
         </a>
       </Link>
     </nav>

@@ -16,8 +16,6 @@ const Home: React.VoidFunctionComponent = () => {
         <title>{t("metaTitle")}</title>
       </Head>
       <Hero />
-      <Features />
-      <Bonus />
     </PageLayout>
   );
 };

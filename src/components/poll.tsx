@@ -231,6 +231,14 @@ const PollPage: NextPage = () => {
                     <TruncatedLinkify>{poll.location}</TruncatedLinkify>
                   </div>
                 ) : null}
+                {poll.maxVotes ? (
+                  <div className="lg:text-lg">
+                    <div className="text-sm text-slate-500">
+                      {t("maxVotes")}
+                    </div>
+                    {poll.maxVotes}
+                  </div>
+                ) : null}
                 <div>
                   <div className="mb-2 text-sm text-slate-500">
                     {t("possibleAnswers")}

@@ -3,6 +3,8 @@ import clsx from "clsx";
 import { AnimatePresence, motion } from "framer-motion";
 import * as React from "react";
 
+import X from "@/components/icons/x.svg";
+
 import VoteIcon from "./vote-icon";
 
 export interface VoteSelectorProps {
@@ -12,23 +14,33 @@ export interface VoteSelectorProps {
   onBlur?: React.FocusEventHandler<HTMLButtonElement>;
   onKeyDown?: React.KeyboardEventHandler<HTMLButtonElement>;
   className?: string;
+  capReached: boolean;
 }
 
 const orderedVoteTypes: VoteType[] = ["yes", "ifNeedBe", "no"];
 
-const getNext = (value: VoteType) => {
-  return orderedVoteTypes[
+const getNext = (value: VoteType, capReached: boolean) => {
+  const type = orderedVoteTypes[
     (orderedVoteTypes.indexOf(value) + 1) % orderedVoteTypes.length
   ];
+
+  if (capReached && type == "yes") {
+    return orderedVoteTypes[
+      (orderedVoteTypes.indexOf(value) + 2) % orderedVoteTypes.length
+    ];
+  }
+
+  return type;
 };
 
 export const VoteSelector = React.forwardRef<
   HTMLButtonElement,
   VoteSelectorProps
 >(function VoteSelector(
-  { value, onChange, onFocus, onBlur, onKeyDown, className },
+  { value, onChange, onFocus, onBlur, onKeyDown, className, capReached },
   ref,
 ) {
+
   return (
     <button
       data-testid="vote-selector"
@@ -37,8 +49,10 @@ export const VoteSelector = React.forwardRef<
       onBlur={onBlur}
       onKeyDown={onKeyDown}
       className={clsx(
-        "group relative inline-flex h-9 w-full items-center justify-center overflow-hidden rounded-md border bg-white transition-all hover:ring-4 focus-visible:border-0 focus-visible:ring-2 focus-visible:ring-primary-500",
+        "group relative inline-flex h-9 w-full items-center justify-center overflow-hidden rounded-md border bg-white transition-all hover:ring-4 focus-visible:border-0 focus-visible:ring-2 focus-visible:ring-primary-500 disabled:bg-slate-50",
         {
+          "border-red-200 bg-red-50 hover:ring-red-100/50 active:bg-red-100/50":
+            value === "yes" && capReached,
           "border-green-200 bg-green-50 hover:ring-green-100/50 active:bg-green-100/50":
             value === "yes",
           "border-amber-200 bg-amber-50 hover:ring-amber-100/50 active:bg-amber-100/50":
@@ -51,9 +65,10 @@ export const VoteSelector = React.forwardRef<
         className,
       )}
       onClick={() => {
-        onChange?.(value ? getNext(value) : orderedVoteTypes[0]);
+        onChange?.(value ? getNext(value, capReached) : capReached ? orderedVoteTypes[1] : orderedVoteTypes[0]);
       }}
       ref={ref}
+    //disabled={(capReached && value == "yes")}
     >
       <AnimatePresence initial={false}>
         <motion.span
@@ -64,7 +79,7 @@ export const VoteSelector = React.forwardRef<
           exit={{ opacity: 0, scale: 0.5, y: 45 }}
           key={value}
         >
-          <VoteIcon type={value} />
+          {capReached && value == "yes" ? <X className="text-red-500 h-5" /> : <VoteIcon type={value} />}
         </motion.span>
       </AnimatePresence>
     </button>

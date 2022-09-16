@@ -1,6 +1,7 @@
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import "tailwindcss/tailwind.css";
 import "~/style.css";
+import "/public/fonts/fonts.css"
 
 import { withTRPC } from "@trpc/next";
 import { NextPage } from "next";
@@ -17,10 +18,6 @@ import Maintenance from "@/components/maintenance";
 
 import { AppRouter } from "./api/trpc/[trpc]";
 
-const CrispChat = dynamic(() => import("@/components/crisp-chat"), {
-  ssr: false,
-});
-
 const MyApp: NextPage<AppProps> = ({ Component, pageProps }) => {
   if (process.env.NEXT_PUBLIC_MAINTENANCE_MODE === "1") {
     return <Maintenance />;
@@ -36,7 +33,6 @@ const MyApp: NextPage<AppProps> = ({ Component, pageProps }) => {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <CrispChat />
       <Toaster />
       <Component {...pageProps} />
     </PlausibleProvider>

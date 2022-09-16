@@ -20,16 +20,6 @@ export const LanguageSelect: React.VoidFunctionComponent<{
     >
       <option value="en">English</option>
       <option value="de">Deutsch</option>
-      <option value="es">Español</option>
-      <option value="fr">Français</option>
-      <option value="hu">Magyar</option>
-      <option value="it">Italiano</option>
-      <option value="ko">한국어</option>
-      <option value="nl">Nederlands</option>
-      <option value="pt">Português</option>
-      <option value="pt-BR">Português - Brasil</option>
-      <option value="sv">Svenska</option>
-      <option value="zh">汉语</option>
     </select>
   );
 };

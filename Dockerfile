@@ -17,11 +17,8 @@ FROM node:alpine
 ENV PORT 3000
 EXPOSE 3000
 
-ARG DATABASE_URL
-ENV DATABASE_URL $DATABASE_URL
-
 WORKDIR /usr/src/app
 
 COPY --from=build /app .
 
-CMD sh -c "yarn prisma migrate deploy --schema prisma/schema.prisma && yarn start"
+CMD ["sh", "startup.sh"]

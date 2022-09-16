@@ -73,14 +73,14 @@ const ManagePoll: React.VoidFunctionComponent<{
               const [start, end] = option.value.split("/");
               return end
                 ? {
-                    type: "timeSlot",
-                    start,
-                    end,
-                  }
+                  type: "timeSlot",
+                  start,
+                  end,
+                }
                 : {
-                    type: "date",
-                    date: start,
-                  };
+                  type: "date",
+                  date: start,
+                };
             }),
             timeZone: poll.timeZone ?? "",
           }}
@@ -159,6 +159,7 @@ const ManagePoll: React.VoidFunctionComponent<{
           title: poll.title,
           location: poll.location ?? "",
           description: poll.description ?? "",
+          maxVotes: poll.maxVotes ?? undefined,
         }}
         className="p-4"
         onSubmit={(data) => {

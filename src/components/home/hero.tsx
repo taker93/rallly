@@ -33,13 +33,6 @@ const Hero: React.VoidFunctionComponent = () => {
           >
             {t("getStarted")}
           </a>
-          <a
-            href="/demo"
-            className="rounded-lg bg-slate-500 px-5 py-3 font-semibold text-white shadow-sm  transition-all hover:bg-slate-500/90 hover:text-white hover:no-underline hover:shadow-md focus:ring-2  focus:ring-primary-200 active:bg-slate-600/90"
-            rel="nofollow"
-          >
-            {t("liveDemo")}
-          </a>
         </div>
       </div>
       <div className="pointer-events-none mt-24 hidden h-[380px] select-none items-end justify-center md:flex lg:mt-8 lg:ml-8">

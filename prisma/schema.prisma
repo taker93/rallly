@@ -38,6 +38,7 @@ model Poll {
   user             User          @relation(fields: [userId], references: [id])
   userId           String        @map("user_id")
   votes            Vote[]
+  maxVotes         Int?
   timeZone         String?       @map("time_zone")
   verified         Boolean       @default(false)
   options          Option[]

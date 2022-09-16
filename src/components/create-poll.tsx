@@ -41,6 +41,7 @@ export interface CreatePollPageProps extends SessionProps {
   title?: string;
   location?: string;
   description?: string;
+  maxVotes?: number;
   view?: "week" | "month";
 }
 
@@ -48,6 +49,7 @@ const Page: NextPage<CreatePollPageProps> = ({
   title,
   location,
   description,
+  maxVotes,
   view,
 }) => {
   const { t } = useTranslation("app");
@@ -63,6 +65,7 @@ const Page: NextPage<CreatePollPageProps> = ({
         title,
         location,
         description,
+        maxVotes,
       },
       options: {
         view,
@@ -70,9 +73,9 @@ const Page: NextPage<CreatePollPageProps> = ({
       userDetails:
         session.user?.isGuest === false
           ? {
-              name: session.user.name,
-              contact: session.user.email,
-            }
+            name: session.user.name,
+            contact: session.user.email,
+          }
           : undefined,
     });
 
@@ -128,6 +131,7 @@ const Page: NextPage<CreatePollPageProps> = ({
         type: "date",
         location: formData?.eventDetails?.location,
         description: formData?.eventDetails?.description,
+        maxVotes: formData?.eventDetails?.maxVotes,
         user: {
           name: required(formData?.userDetails?.name),
           email: required(formData?.userDetails?.contact),

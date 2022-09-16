@@ -62,6 +62,9 @@
   .input-error {
     @apply border-rose-500 ring-1 ring-rose-400 focus:border-rose-400 focus:ring-rose-500;
   }
+  .input:disabled {
+    @apply bg-gray-100;
+  }
   .checkbox {
     @apply h-4 w-4 rounded border-slate-300 text-primary-500 shadow-sm focus:ring-primary-500;
   }

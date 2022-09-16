@@ -38,9 +38,9 @@ const CookieConsentPopover: React.VoidFunctionComponent = () => {
             browsing experience on this website.
           </div>
           <div className="flex items-center space-x-6">
-            <Link href="/privacy-policy">
+            <Link href="https://ff-altendiez.de/datenschutzerklaerung">
               <a className="hover:text-primary-500 text-slate-400">
-                Privacy Policy
+                Datenschutzerklärung
               </a>
             </Link>
             <button
